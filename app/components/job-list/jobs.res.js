@@ -1,4 +1,4 @@
-angular.module('common')
+angular.module('jobList')
     .factory('JobRes', ['$resource',
         function($resource){
             return $resource('data/:jobId.json', {}, {

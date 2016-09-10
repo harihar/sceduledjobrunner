@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('jobList', ['ui.router', 'common']);
+angular.module('jobList', ['ui.router', 'ngResource']);

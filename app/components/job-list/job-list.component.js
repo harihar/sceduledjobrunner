@@ -10,10 +10,12 @@ function JobListController($scope, $http, $timeout, $sce, LOGGER) {
             job.error = false;
             job.errorMessage = null;
         }).catch(function error(error) {
-            LOGGER.log(error);
+            //LOGGER.log(error);
             job.error = true;
-            var url = '<p>' + job.url + '</p>';
-            job.errorMessage = $sce.trustAsHtml(url + error.data.message);
+            var errorMessage = '<p>' + job.url + '</p>';
+            errorMessage += error.status ? '<p>Status: ' + error.status + '</p>' : '';
+            errorMessage += 'Error: ' + (error.data.message || error.data);
+            job.errorMessage = $sce.trustAsHtml(errorMessage);
         }).finally(function () {
             job.isInProgress = false;
         });
@@ -43,7 +45,7 @@ function JobListController($scope, $http, $timeout, $sce, LOGGER) {
         $timeout(function () {
             LOGGER.log('fake wait');
             callUrl(job);
-        }, 500);
+        }, 14000);
 
     };
 
@@ -57,7 +59,7 @@ function JobListController($scope, $http, $timeout, $sce, LOGGER) {
         __this.searchText = "";
     };
 
-    __this.showError = function showError(job) {
+    __this.toggleShowError = function toggleShowError(job) {
         if (job.showError) {
             job.showError = false;
         } else if (job.error) {
@@ -66,10 +68,6 @@ function JobListController($scope, $http, $timeout, $sce, LOGGER) {
     };
 
     __this.isJobInProgress = isJobInProgress;
-    $scope.$watch('jobs', function (newVal, oldVal) {
-        //LOGGER.log('changed');
-        //LOGGER.log(__this.isJobInProgress())
-    }, true);
 
 }
 

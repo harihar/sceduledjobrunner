@@ -20,7 +20,7 @@
                     tooltip-placement="right" uib-tooltip="Run all jobs"
                     ng-disabled="$ctrl.isJobInProgress()"
                     ng-click="$ctrl.runAllJobs()">
-                <span class="glyphicon glyphicon-repeat"></span>
+                <span class="fa fa-play"></span>
             </button>
         </div>
     </div>
@@ -32,7 +32,7 @@
                  ng-class="{'btn-wait': job.isInProgress}"
                  ng-click="$ctrl.runJob(job)"
                  tooltip-placement="right" uib-tooltip="Run job">
-                <span class="glyphicon glyphicon-repeat"></span>
+                <span ng-class="job.isInProgress ? 'fa fa-spinner fa-spin fa-2x' : 'fa fa-play-circle fa-2x'"></span>
             </div>
         </div>
         <div class="row">
@@ -40,13 +40,14 @@
                  ng-class="{'status-error': job.error,
                     'status-success': !job.error,
                     'status-in-progress': job.isInProgress}"
-                 ng-click="$ctrl.showError(job)">
+                 ng-click="$ctrl.toggleShowError(job)">
             </div>
         </div>
         <div class="row">
-            <div class="col-xs-12 panel panel-default"
-                 uib-collapse="!job.showError"
-                 ng-bind-html="job.errorMessage">
+            <div class="col-xs-12 panel panel-danger"
+                 uib-collapse="!job.showError">
+                <i class="fa fa-angle-double-up fa-pull-right" ng-click="$ctrl.toggleShowError(job)"></i>
+                <span ng-bind-html="job.errorMessage"></span>
             </div>
         </div>
     </div>

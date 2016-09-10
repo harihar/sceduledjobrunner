@@ -1,26 +1,12 @@
-/* app css stylesheet */
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.pnl-menu {
-    position: relative;
-    top: 90px;
-    background: #eee;
-}
-.menu {
-    list-style: none;
-    margin-top: 15px;
-    padding: 0 0 0.5em;
-    background: #eee;
-}
-
 .job-container {
-    width: 60%;
+    width: 80%;
 }
-
 .pnl-status-bar {
-    height: 10px;
+    height: 12px;
     background: lightskyblue;
     line-height: 10px;
     border-radius: 0 0 4px 4px;
@@ -96,5 +82,52 @@ body {
 }
 
 .pnl-menu {
+    position: relative;
+    /*top: 90px;*/
+    /*background: #eee;*/
+}
+.menu {
+    list-style: none;
+    margin-top: 15px;
+    padding: 0 0 0.5em;
+    /*background: #eee;*/
+}
+.pnl-menu {
     font-size: medium;
+    /*margin-bottom: 15px;*/
+}
+
+.pnl-menu .menu a {
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    padding-left: 15px;
+    line-height: 35px;
+}
+
+.pnl-menu .menu a:hover {
+    text-decoration: none;
+    background: #b7de7b;
+}
+.active {
+    background: #dff6d8;
+}
+
+@media screen and (min-width: 768px) {
+    .pnl-menu .menu a {
+        text-align: left;
+        border-radius: 4px;
+    }
+    .pnl-menu {
+        position: relative;
+        top: 80px;
+        left: 12px;
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (min-width: 1084px) {
+    .job-container {
+        width: 70%;
+    }
 }
