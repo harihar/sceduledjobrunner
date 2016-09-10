@@ -7,7 +7,7 @@
             'ui.bootstrap',
             'common',
             'home',
-            'jobList'
+            'jobManagement'
         ])
         .value('isLogEnabled', true)
         .service('LOGGER', ['isLogEnabled', function (isLogEnabled) {

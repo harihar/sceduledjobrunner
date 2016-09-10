@@ -6,7 +6,7 @@
             'ui.router',
             'common',
             'ui.bootstrap',
-            'jobList'
+            'jobManagement'
         ])
         .config(['$stateProvider', '$urlRouterProvider', config]);
 
@@ -24,41 +24,46 @@
 
         $stateProvider.state('home.middlewarejobs', {
             url: '/middlewarejobs',
-            component: 'jobList',
+            component: 'jobRunner',
             resolve: {
                 mainJobTitle: function () {
                     return 'Middleware Jobs';
                 },
-                jobs: function (Job) {
-                    return Job.getJobs('mw_jobs');
+                data: function (Job) {
+                    return Job.getData('mw_jobs');
                 }
             }
         });
 
         $stateProvider.state('home.mccsjobs', {
             url: '/mccsjobs',
-            component: 'jobList',
+            component: 'jobRunner',
             resolve: {
                 mainJobTitle: function () {
                     return 'MCCS Jobs';
                 },
-                jobs: function (Job) {
-                    return Job.getJobs('mccs_jobs');
+                data: function (Job) {
+                    return Job.getData('mccs_jobs');
                 }
             }
         });
 
         $stateProvider.state('home.scheduledjobs', {
             url: '/scheduledjobs',
-            component: 'jobList',
+            component: 'jobRunner',
             resolve: {
                 mainJobTitle: function () {
                     return 'Scheduled Jobs';
                 },
-                jobs: function (Job) {
-                    return Job.getJobs('scheduled_jobs');
+                data: function (Job) {
+                    return Job.getData('scheduled_jobs');
                 }
             }
+        });
+
+        $stateProvider.state('home.jobsmonitor', {
+            url: '/jobsmonitor',
+            component: 'jobsMonitor'
         });
     }
 })();

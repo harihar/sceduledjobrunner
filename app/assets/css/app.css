@@ -131,3 +131,16 @@ body {
         width: 70%;
     }
 }
+
+.panel-error {
+    border: 1px solid #d68077;
+    border-top: 0;
+    background: whitesmoke;
+}
+
+.panel-error i {
+    cursor: pointer;
+    float: right;
+    padding: 3px;
+    font-weight: 100;
+}
