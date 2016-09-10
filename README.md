@@ -1,4 +1,4 @@
-<h3>Pre requisites:</h3>
+<h3>Pre requisites</h3>
 <ol>
     <li>Node</li>
     <li>Git</li>
