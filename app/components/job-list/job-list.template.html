@@ -1,0 +1,53 @@
+<div class="header-container well well-sm">
+    <p class="job-header text-center">{{$ctrl.mainJobTitle}}</p>
+</div>
+<div class="container job-container">
+    <div class="row search-container">
+        <div class="col-xs-10">
+            <form role="search">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" ng-model="$ctrl.searchText">
+                    <span class="input-group-btn">
+                        <button type="reset" class="btn btn-default" ng-click="$ctrl.clearSearch()">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                    </span>
+                </div>
+            </form>
+        </div>
+        <div class="col-xs-2">
+            <button type="button" class="btn-play-all btn btn-info"
+                    tooltip-placement="right" uib-tooltip="Run all jobs"
+                    ng-disabled="$ctrl.isJobInProgress()"
+                    ng-click="$ctrl.runAllJobs()">
+                <span class="glyphicon glyphicon-repeat"></span>
+            </button>
+        </div>
+    </div>
+
+    <div class="pnl-job" ng-repeat="job in $ctrl.jobs | filter:{name:$ctrl.searchText} | orderBy:'name'">
+        <div class="row job-details">
+            <div class="col-xs-10 job-name text-uppercase">{{job.name}}</div>
+            <div class="clo-xs-2 btn-play"
+                 ng-class="{'btn-wait': job.isInProgress}"
+                 ng-click="$ctrl.runJob(job)"
+                 tooltip-placement="right" uib-tooltip="Run job">
+                <span class="glyphicon glyphicon-repeat"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 pnl-status-bar"
+                 ng-class="{'status-error': job.error,
+                    'status-success': !job.error,
+                    'status-in-progress': job.isInProgress}"
+                 ng-click="$ctrl.showError(job)">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 panel panel-default"
+                 uib-collapse="!job.showError"
+                 ng-bind-html="job.errorMessage">
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+[
+  {
+    "id": "1",
+    "url": "http://localhost:3000/mw/open/activate/connection",
+    "name": "Activate Connections"
+  },
+  {
+    "id": "2",
+    "url": "http://localhost:3000/mw/open/productactivation",
+    "name": "Activate Products"
+  },
+  {
+    "id": "3",
+    "url": "http://localhost:3000/mw/open/disconnect",
+    "name": "Connection Termination"
+  },
+  {
+    "id": "4",
+    "url": "http://localhost:3000/mw/open/covchange",
+    "name": "COV"
+  },
+  {
+    "id": "5",
+    "url": "http://localhost:3000/mw/open/simchange",
+    "name": "Sim Change"
+  },
+  {
+    "id": "6",
+    "url": "http://localhost:3000/mw/open/gsmnochange",
+    "name": "Gsm number Change"
+  }
+
+]

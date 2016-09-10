@@ -1,0 +1,23 @@
+[
+  {
+    "id": "1",
+    "url": "http://localhost:3000/mw/open/emailprocessor",
+    "name": "Process email queue"
+  },
+  {
+    "id": "2",
+    "url": "http://localhost:3000/mw/open/smsprocessor",
+    "name": "Process sms queue"
+  },
+  {
+    "id": "3",
+    "url": "http://localhost:3000/mw/open/commissioning",
+    "name": "Create commissioning items"
+  },
+  {
+    "id": "4",
+    "url": "http://localhost:3000/mw/open/highusage",
+    "name": "Calculate high usage items"
+  }
+
+]

@@ -1,0 +1,100 @@
+/* app css stylesheet */
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.pnl-menu {
+    position: relative;
+    top: 90px;
+    background: #eee;
+}
+.menu {
+    list-style: none;
+    margin-top: 15px;
+    padding: 0 0 0.5em;
+    background: #eee;
+}
+
+.job-container {
+    width: 60%;
+}
+
+.pnl-status-bar {
+    height: 10px;
+    background: lightskyblue;
+    line-height: 10px;
+    border-radius: 0 0 4px 4px;
+}
+
+.job-name {
+    color: white;
+    font-weight: 200;
+    background: #5c6f6c;
+    border-top-left-radius: 4px;
+    height: 60px;
+    font-size: large;
+    display: flex;
+    align-items: center;
+}
+
+.btn-play {
+    color: white;
+    background: #5c6f6c;
+    cursor: pointer;
+    border-top-right-radius: 4px;
+    height: 60px;
+    font-size: large;
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center; /* align vertical */
+}
+
+.status-error {
+    background: #d68077;
+    cursor: pointer;
+}
+
+.status-success {
+    background: #b7de7b;
+}
+
+.status-in-progress {
+    background: #65b0dc;
+}
+
+.btn-wait {
+    /*background: #928c8c;*/
+    cursor: wait;
+}
+
+.btn-play-all {
+    width: 100%;
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-container {
+    margin: 0 0 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.job-header {
+    font-size: xx-large;
+    color: dimgrey;
+    font-weight: 800;
+}
+
+.search-container {
+    margin-bottom: 15px;
+}
+
+.pnl-job {
+    margin-bottom: 10px;
+}
+
+.pnl-menu {
+    font-size: medium;
+}
