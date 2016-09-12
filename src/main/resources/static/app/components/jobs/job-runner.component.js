@@ -5,6 +5,13 @@
     function JobRunnerController($http, $timeout, $sce, $filter, LOGGER) {
         var __this = this;
 
+        function getErrorMessage(job, error) {
+            var errorMessage = '<p>' + job.url + '</p>';
+            errorMessage += error.status ? '<p>Status: ' + error.status + (error.statusText ? ' (' + error.statusText + ')' : '') + '</p>' : '';
+            errorMessage += 'Error message: ' + (error.data ? error.data.message : error.data);
+            return errorMessage;
+        }
+
         function callUrl(job) {
             $http.get(job.url).then(function success() {
                 // LOGGER.log(response);
@@ -13,9 +20,7 @@
             }).catch(function error(error) {
                 //LOGGER.log(error);
                 job.error = true;
-                var errorMessage = '<p>' + job.url + '</p>';
-                errorMessage += error.status ? '<p>Status: ' + error.status + '</p>' : '';
-                errorMessage += 'Error: ' + (error.data.message || error.data);
+                var errorMessage = getErrorMessage(job, error);
                 job.errorMessage = $sce.trustAsHtml(errorMessage);
             }).finally(function () {
                 job.isInProgress = false;
@@ -81,6 +86,6 @@
                 data: '<'
             },
             controller: ['$http', '$timeout', '$sce', '$filter', 'LOGGER', JobRunnerController],
-            templateUrl: 'components/jobs/job-runner.template.html'
+            templateUrl: 'app/components/jobs/job-runner.template.html'
         });
 })();

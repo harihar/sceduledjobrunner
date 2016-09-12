@@ -1,13 +1,13 @@
 [
   {
     "id": "1",
-    "url": "http://localhost:3000/mw/open/activate/connection",
+    "url": "http://172.20.1.125:9095/mw/open/activate/9999999",
     "name": "Activate Connections"
   },
   {
     "id": "2",
-    "url": "http://localhost:3000/mw/open/productactivation",
-    "name": "Activate Products"
+    "url": "http://localhost:3000/mw/open/connectionupdate",
+    "name": "Update Connection"
   },
   {
     "id": "3",
@@ -21,7 +21,7 @@
   },
   {
     "id": "5",
-    "url": "http://localhost:3000/mw/open/simchange",
+    "url": "http://localhost:9095/mw/open/simchange",
     "name": "Sim Change"
   },
   {

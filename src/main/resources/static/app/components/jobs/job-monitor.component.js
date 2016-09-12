@@ -5,6 +5,6 @@
         .component('jobsMonitor', {
             controller: function JobMonitorController() {
             },
-            templateUrl: 'components/jobs/job-monitor.template.html'
+            templateUrl: 'app/components/jobs/job-monitor.template.html'
         });
 })();

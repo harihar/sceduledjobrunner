@@ -16,7 +16,7 @@
         $stateProvider.state('home', {
             abstract: true,
             url: '',
-            templateUrl: 'components/home/home.template.html',
+            templateUrl: 'app/components/home/home.template.html',
             controller: function ($state) {
                 $state.go('.middlewarejobs');
             }

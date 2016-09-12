@@ -81,11 +81,6 @@ body {
     margin-bottom: 10px;
 }
 
-.pnl-menu {
-    position: relative;
-    /*top: 90px;*/
-    /*background: #eee;*/
-}
 .menu {
     list-style: none;
     margin-top: 15px;
@@ -94,6 +89,7 @@ body {
 }
 .pnl-menu {
     font-size: medium;
+    font-weight: 800;
     /*margin-bottom: 15px;*/
 }
 
@@ -103,11 +99,14 @@ body {
     display: block;
     padding-left: 15px;
     line-height: 35px;
+    border: 1px solid white;
+    color: dimgrey;
 }
 
 .pnl-menu .menu a:hover {
     text-decoration: none;
     background: #b7de7b;
+    color: #337ab7;
 }
 .active {
     background: #dff6d8;
@@ -129,6 +128,12 @@ body {
 @media screen and (min-width: 1084px) {
     .job-container {
         width: 70%;
+    }
+
+    .job-container {
+        width: 60%;
+        position: relative;
+        left: -120px;
     }
 }
 

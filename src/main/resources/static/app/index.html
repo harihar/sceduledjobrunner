@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<body ng-cloak>
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<div ui-view></div>
+
+<script src="app/bower_components/angular/angular.js"></script>
+<script src="app/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="app/bower_components/angular-resource/angular-resource.min.js"></script>
+<script src="app/bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="app/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+<script src="app/app.js"></script>
+<script src="app/components/shared/version/version.js"></script>
+<script src="app/components/shared/version/version-directive.js"></script>
+<script src="app/components/shared/version/interpolate-filter.js"></script>
+<script src="app/components/shared/common/common.module.js"></script>
+<script src="app/components/home/home.module.js"></script>
+<script src="app/components/jobs/job-management.module.js"></script>
+<script src="app/components/jobs/jobs.res.js"></script>
+<script src="app/components/jobs/jobs.model.js"></script>
+<script src="app/components/jobs/job-runner.component.js"></script>
+<script src="app/components/jobs/job-monitor.component.js"></script>
+</body>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Scheduled Job Runner</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="app/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="app/bower_components/components-font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="app/assets/css/app.css">
+</head>
+</html>
