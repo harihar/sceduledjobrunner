@@ -8,7 +8,7 @@ angular.module('jobManagement')
                 deferred.resolve(jobGroup);
             } else {
                 jobCache[jobGroupId] = {};
-                JobRes.query({jobId: jobGroupId}, function (response) {
+                JobRes.query({jobGroupId: jobGroupId}, function (response) {
                     jobCache[jobGroupId].jobs = response;
                     deferred.resolve(jobCache[jobGroupId]);
                 });

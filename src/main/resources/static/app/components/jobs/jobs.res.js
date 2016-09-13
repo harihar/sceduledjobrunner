@@ -1,10 +1,9 @@
 angular.module('jobManagement')
-    .factory('JobRes', ['$resource',
-        function($resource){
-            return $resource('app/data/:jobId.json', {}, {
+    .factory('JobRes', ['$resource', 'sitepath',
+        function($resource, sitepath){
+            return $resource(sitepath + 'runnablejobs', {}, {
                 query: {
                     method: 'GET',
-                    params: {jobId: 'jobs'},
                     isArray: true
                 }
             });

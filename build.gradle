@@ -23,6 +23,7 @@ targetCompatibility = 1.8
 
 repositories {
 	mavenCentral()
+	mavenLocal()
 }
 
 
@@ -30,6 +31,11 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-jdbc')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile('org.springframework.boot:spring-boot-devtools')
+//	compile('org.projectlombok:lombok:1.16.10')
+	compile group: 'org.springframework', name: 'spring-jdbc', version: '4.3.2.RELEASE'
+	compile group: 'org.projectlombok', name: 'lombok', version: '1.16.10'
+	compile group: 'com.zaxxer', name: 'HikariCP', version: '2.5.0'
+	compile group: 'com.oracle', name: 'ojdbc7', version: '12.1.0.1.0'
 	runtime('com.h2database:h2')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }

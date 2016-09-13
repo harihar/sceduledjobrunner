@@ -17,6 +17,7 @@
                 }
             }
         }])
+        .value("sitepath", window.location.protocol + '//' + window.location.host + window.location.pathname)
         .run(['$state', function ($state) {
             //for initializing the $state when app is triggered by hitting bookmark
         }]);
