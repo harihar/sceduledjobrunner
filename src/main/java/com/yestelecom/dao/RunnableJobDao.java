@@ -23,7 +23,8 @@ public class RunnableJobDao {
         return jdbcTemplate.query("SELECT * FROM runnable_jobs WHERE job_group = ?", new Object[]{jobGroupId}, new RowMapper<RunnableJob>() {
             @Override
             public RunnableJob mapRow(ResultSet rs, int rowNum) throws SQLException {
-                return RunnableJob.builder().id(rs.getLong("id"))
+                return RunnableJob.builder()
+                        .id(rs.getLong("id"))
                         .name(rs.getString("name"))
                         .url(rs.getString("url"))
                         .group(rs.getString("job_group"))
