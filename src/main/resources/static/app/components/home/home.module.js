@@ -30,7 +30,7 @@
                     return 'Middleware Jobs';
                 },
                 data: function (Job) {
-                    return Job.getData('mw_jobs');
+                    return Job.getData('MW');
                 }
             }
         });
@@ -43,7 +43,7 @@
                     return 'MCCS Jobs';
                 },
                 data: function (Job) {
-                    return Job.getData('mccs_jobs');
+                    return Job.getData('MCCS');
                 }
             }
         });
@@ -56,7 +56,7 @@
                     return 'Scheduled Jobs';
                 },
                 data: function (Job) {
-                    return Job.getData('scheduled_jobs');
+                    return Job.getData('OTHER_SCHEDULED');
                 }
             }
         });
