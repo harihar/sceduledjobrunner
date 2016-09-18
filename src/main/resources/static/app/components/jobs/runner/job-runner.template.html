@@ -28,12 +28,12 @@
     <div class="pnl-job" ng-repeat="job in $ctrl.data.jobs | filter:{name:$ctrl.data.searchText} | orderBy:'name'">
         <div class="row job-details">
             <div class="col-xs-10 job-name text-uppercase">{{job.name}}</div>
-            <div class="clo-xs-2 btn-play"
+            <a class="clo-xs-2 btn-play"
                  ng-class="{'btn-wait': job.isInProgress}"
-                 ng-click="$ctrl.runJob(job)"
-                 tooltip-placement="right" uib-tooltip="Run job">
-                <span ng-class="job.isInProgress ? 'fa fa-spinner fa-spin fa-2x' : 'fa fa-play-circle fa-2x'"></span>
-            </div>
+                 ng-click="$ctrl.runJob(job, $event)"
+                 href="{{job.url}}">
+                <span ng-class="job.isInProgress ? 'fa fa-spinner fa-spin fa-3x' : 'fa fa-play-circle fa-3x'"></span>
+            </a>
         </div>
         <div class="row">
             <div class="col-xs-12 pnl-status-bar"

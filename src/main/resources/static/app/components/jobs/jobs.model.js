@@ -15,5 +15,13 @@ angular.module('jobManagement')
             }
             return deferred.promise;
         };
+
+        this.getAll = function getAllData() {
+            var deferred = $q.defer();
+            JobRes.query(function (response) {
+                deferred.resolve(response);
+            });
+            return deferred.promise;
+        }
     }
     ]);

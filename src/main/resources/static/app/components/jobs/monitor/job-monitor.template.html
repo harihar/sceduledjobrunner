@@ -1,0 +1,16 @@
+<div class="header-container well well-sm">
+    <p class="job-header text-center">Job Monitor</p>
+</div>
+<div class="container">
+    <table ng-table="$ctrl.tableParams" class="table table-condensed table-bordered table-striped">
+        <tr ng-repeat="row in $data">
+            <td title="'Name'" filter="{name: 'text'}" sortable="'name'">{{row.name}}</td>
+            <td title="'Last Run On'" sortable="'lastModified'"><nobr>{{row.lastModified | date:'d-M-yyyy h:m:s a'}}</nobr></td>
+            <td title="'Status'" filter="{status: 'text'}" sortable="'status'">{{row.status}}</td>
+            <td title="'Last Run Error Message'" filter="{message: 'text'}">{{row.message}}</td>
+            <td title="'Job Group'" filter="{jobGroup: 'text'}" sortable="'jobGroup'">{{row.jobGroup}}</td>
+            <td title="'Enabled'"  sortable="'enabled'">{{row.enabled}}</td>
+            <!--<td title="'URL'" filter="{enabled: 'boolean'}" sortable="'enabled'">{{row.enabled}}</td>-->
+        </tr>
+    </table>
+</div>

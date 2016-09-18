@@ -34,7 +34,7 @@ public class ScheduledJobDao {
                     .name(rs.getString("name"))
                     .isEnabled(rs.getBoolean("is_enabled"))
                     .status(rs.getString("status"))
-                    .lastModified(rs.getDate("last_modified"))
+                    .lastModified(rs.getTimestamp("last_modified"))
                     .lastModifiedBy(rs.getLong("last_modified_by"))
                     .url(rs.getString("url"))
                     .jobGroup(rs.getString("job_group"))

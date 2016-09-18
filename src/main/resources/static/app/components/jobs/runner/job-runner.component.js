@@ -39,7 +39,10 @@
             return result;
         }
 
-        __this.runJob = function runJob(job) {
+        __this.runJob = function runJob(job, event) {
+            if(event) {
+                event.preventDefault();
+            }
             if (job.isInProgress) {
                 return;
             }
@@ -86,6 +89,6 @@
                 data: '<'
             },
             controller: ['$http', '$timeout', '$sce', '$filter', 'LOGGER', JobRunnerController],
-            templateUrl: 'app/components/jobs/job-runner.template.html'
+            templateUrl: 'app/components/jobs/runner/job-runner.template.html'
         });
 })();

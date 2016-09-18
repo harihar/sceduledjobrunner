@@ -4,7 +4,6 @@
     angular
         .module('home', [
             'ui.router',
-            'common',
             'ui.bootstrap',
             'jobManagement'
         ])
@@ -63,7 +62,12 @@
 
         $stateProvider.state('home.jobsmonitor', {
             url: '/jobsmonitor',
-            component: 'jobsMonitor'
+            component: 'jobsMonitor',
+            resolve: {
+                tableData: function(Job) {
+                    return Job.getAll();
+                }
+            }
         });
     }
 })();

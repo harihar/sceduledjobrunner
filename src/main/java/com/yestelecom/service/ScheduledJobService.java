@@ -46,4 +46,8 @@ public class ScheduledJobService {
         }
         return baseUrl;
     }
+
+    public List<ScheduledJob> getAllJobs() {
+        return scheduledJobDao.getAllJobs();
+    }
 }

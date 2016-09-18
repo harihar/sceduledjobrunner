@@ -5,9 +5,9 @@
         .module('myApp', [
             'ui.router',
             'ui.bootstrap',
-            'common',
             'home',
-            'jobManagement'
+            'jobManagement',
+            'ngTable'
         ])
         .value('isLogEnabled', true)
         .service('LOGGER', ['isLogEnabled', function (isLogEnabled) {

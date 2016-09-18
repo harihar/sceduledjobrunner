@@ -26,13 +26,16 @@ body {
 .btn-play {
     color: white;
     background: #5c6f6c;
-    cursor: pointer;
     border-top-right-radius: 4px;
     height: 60px;
-    font-size: large;
     display: flex;
     justify-content: center; /* align horizontal */
     align-items: center; /* align vertical */
+    text-decoration: none !important;
+}
+
+.btn-play:hover, .btn-play:focus, .btn-play:active, .btn-play:visited {
+    color: white;
 }
 
 .status-error {
