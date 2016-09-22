@@ -35,7 +35,6 @@ public class ScheduledJobService {
                     String urlWithBaseUrl = baseUrl + sc.getUrl();
                     sc.setUrl(urlWithBaseUrl);
                 });
-        System.out.println("Hello");
         return jobs;
     }
 
