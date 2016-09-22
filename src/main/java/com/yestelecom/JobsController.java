@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -21,11 +22,11 @@ public class JobsController {
     private ScheduledJobService scheduledJobService;
 
     @RequestMapping("/runnablejobs")
-    public List<ScheduledJob> getJobs(@RequestParam(name = "jobGroupId", required = false) String groupId) {
+    public List<ScheduledJob> getJobs(@RequestParam(name = "jobGroupId", required = false) String groupId, HttpServletRequest request) {
         if(StringUtils.isEmpty(groupId)) {
             return scheduledJobService.getAllJobs();
         }else {
-            return scheduledJobService.getJobs(groupId);
+            return scheduledJobService.getJobs(groupId, request);
         }
     }
 }
