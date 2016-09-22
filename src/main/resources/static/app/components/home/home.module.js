@@ -34,15 +34,15 @@
             }
         });
 
-        $stateProvider.state('home.mccsjobs', {
-            url: '/mccsjobs',
+        $stateProvider.state('home.networkjobs', {
+            url: '/networkjobs',
             component: 'jobRunner',
             resolve: {
                 mainJobTitle: function () {
-                    return 'MCCS Jobs';
+                    return 'Network Jobs';
                 },
                 data: function (Job) {
-                    return Job.getData('MCCS');
+                    return Job.getData('Network');
                 }
             }
         });

@@ -6,11 +6,15 @@
         <tr ng-repeat="row in $data">
             <td title="'Name'" filter="{name: 'text'}" sortable="'name'">{{row.name}}</td>
             <td title="'Last Run On'" sortable="'lastModified'"><nobr>{{row.lastModified | date:'d-M-yyyy h:m:s a'}}</nobr></td>
-            <td title="'Status'" filter="{status: 'text'}" sortable="'status'">{{row.status}}</td>
+            <td title="'Status'" filter="{status: 'select'}" filter-data="$ctrl.statusOptions" sortable="'status'">{{row.status}}</td>
             <td title="'Last Run Error Message'" filter="{message: 'text'}">{{row.message}}</td>
-            <td title="'Job Group'" filter="{jobGroup: 'text'}" sortable="'jobGroup'">{{row.jobGroup}}</td>
-            <td title="'Enabled'"  sortable="'enabled'">{{row.enabled}}</td>
-            <!--<td title="'URL'" filter="{enabled: 'boolean'}" sortable="'enabled'">{{row.enabled}}</td>-->
+            <td title="'Job Group'" filter="{jobGroup: 'select'}" filter-data="$ctrl.jobGroupOptions" class="text-center" sortable="'jobGroup'">{{row.jobGroup}}</td>
+            <td title="'Enabled'" filter="{enabled: 'select'}" filter-data="$ctrl.enabledOptions" class="text-center" sortable="'enabled'" ng-switch="row.enabled">
+                <!--<toggle-switch ng-model="row.enabled"></toggle-switch>-->
+                <i ng-switch-when="true" class="fa fa-check"></i>
+                <i ng-switch-default class="fa fa-close"></i>
+                <!--{{row.enabled}}-->
+            </td>
         </tr>
     </table>
 </div>

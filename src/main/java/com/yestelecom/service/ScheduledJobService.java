@@ -16,8 +16,8 @@ public class ScheduledJobService {
 
     @Autowired
     private ScheduledJobDao scheduledJobDao;
-    @Value("${mccs.jobs.baseurl}")
-    private String mccsJobBaseUrl;
+    @Value("${network.jobs.baseurl}")
+    private String networkJobBaseUrl;
     @Value("${mw.jobs.baseurl}")
     private String mwJobBaseUrl;
     @Value("${scheduled.jobs.baseurl}")
@@ -32,6 +32,7 @@ public class ScheduledJobService {
                     String urlWithBaseUrl = baseUrl + sc.getUrl();
                     sc.setUrl(urlWithBaseUrl);
                 });
+        System.out.println("Hello");
         return jobs;
     }
 
@@ -39,8 +40,8 @@ public class ScheduledJobService {
         String baseUrl = "";
         if ("MW".equalsIgnoreCase(groupId)) {
             baseUrl = mwJobBaseUrl;
-        } else if ("MCCS".equalsIgnoreCase(groupId)) {
-            baseUrl = mccsJobBaseUrl;
+        } else if ("Network".equalsIgnoreCase(groupId)) {
+            baseUrl = networkJobBaseUrl;
         } else if ("OTHER_SCHEDULED".equalsIgnoreCase(groupId)) {
             baseUrl = scheduledJobBaseUrl;
         }
